@@ -1,0 +1,126 @@
+<!-- <div class="formdiv">
+
+
+
+    <form #loginform="ngForm" (ngSubmit)="registerUser()">
+
+        <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="fname"
+                [(ngModel)]="newuser.fname">
+        </div>
+        <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" class="form-control" id="lname" placeholder="Enter Last Name" name="lname"
+                [(ngModel)]="newuser.lname">
+        </div>
+        <div class="form-group">
+            <label for="email">Email id</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter Email ID" name="email"
+                [(ngModel)]="newuser.email">
+        </div>
+        <div class="form-group">
+            <label for="pass">Create Password</label>
+            <input type="password" class="form-control" id="pass" placeholder="Create Password" name="pass"
+                [(ngModel)]="newuser.password">
+        </div>
+        <div class="form-group">
+            <label for="flat">House No</label>
+            <input type="text" class="form-control" id="flat" placeholder="Plot/Flat No." name="flat"
+                [(ngModel)]="newuser.flat">
+        </div>
+        <div class="form-group">
+            <label for="flat">City</label>
+            <input type="text" class="form-control" id="city" placeholder="City" name="city" [(ngModel)]="newuser.city">
+        </div>
+        <div class="form-group">
+            <label for="country">Country</label>
+            <input type="text" class="form-control" id="city" placeholder="Country" name="country"
+                [(ngModel)]="newuser.country">
+        </div>
+        <div class="form-group">
+            <label for="pincode">Pincode</label>
+            <input type="text" class="form-control" id="city" placeholder="Pincode" name="pincode"
+                [(ngModel)]="newuser.pincode">
+        </div>
+        <div class="form-group">
+            <label for="flat">Contact No</label>
+            <input type="text" class="form-control" id="contact" placeholder="Contact No." name="contact"
+                [(ngModel)]="newuser.contact">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary form-control">Register</button>
+        </div>
+    </form>
+
+</div> -->
+
+
+
+
+<div class="container">
+    <form #registrationForm="ngForm" class="form-group" ngNativeValidate class="form-group" (ngSubmit)="registerUser()">
+        <h2 style="text-align:center; font-weight:bold;">Create Your Account</h2>
+        <hr>
+        <div class="row jumbotron">
+            <div class="col-sm-6">
+                <label for="fname">First Name</label>
+                <input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="fname"
+                    [(ngModel)]="newuser.fname">
+            </div>
+            <div class="col-sm-6">
+                <label for="lname">Last Name</label>
+                <input type="text" class="form-control" id="lname" placeholder="Enter Last Name" name="lname"
+                    [(ngModel)]="newuser.lname">
+            </div>
+
+
+            <div class="col-sm-6">
+                <label for="email">Email id</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter Email ID" name="email"
+                    [(ngModel)]="newuser.email">
+            </div>
+            <div class="col-sm-6">
+                <label for="pass">Create Password</label>
+                <input type="password" class="form-control" id="pass" placeholder="Create Password" name="pass"
+                    [(ngModel)]="newuser.password">
+            </div>
+            <div class="col-sm-6">
+                <label for="flat">House No</label>
+                <input type="text" class="form-control" id="flat" placeholder="Plot/Flat No." name="flat"
+                    [(ngModel)]="newuser.flat">
+            </div>
+            <div class="col-sm-6">
+                <label for="flat">City</label>
+                <input type="text" class="form-control" id="city" placeholder="City" name="city"
+                    [(ngModel)]="newuser.city">
+            </div>
+            <div class="col-sm-6">
+                <label for="country">Country</label>
+                <input type="text" class="form-control" id="city" placeholder="Country" name="country"
+                    [(ngModel)]="newuser.country">
+            </div>
+            <div class="col-sm-3">
+                <label for="pincode">Pincode</label>
+                <input type="text" class="form-control" id="city" placeholder="Pincode" name="pincode"
+                    [(ngModel)]="newuser.pincode">
+            </div>
+            <div class="col-sm-3">
+                <label for="flat">Contact No</label>
+                <input type="text" class="form-control" id="contact" placeholder="Contact No." name="contact"
+                    [(ngModel)]="newuser.contact">
+            </div>
+
+            <div class="col-sm-12" style="text-align:center; margin-top: 20px;">
+                <button [disabled]="registrationForm.form.invalid" type="submit" class="btn btn-primary">Register</button>
+            </div>
+        </div>
+        <div class="col">
+            <!-- Simple link -->
+            <a [routerLink]="['/loginform']">Existing user ? Login hear</a>
+        </div>
+    </form>
+
+</div>
+
+<router-outlet></router-outlet>

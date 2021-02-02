@@ -1,0 +1,52 @@
+<p>employee-registration works!</p>
+
+
+
+<div class="container">
+    <form #registrationForm="ngForm" class="form-group" ngNativeValidate class="form-group" (ngSubmit)="registerEmployee()">
+        <h2 style="text-align:center; font-weight:bold;">Create Your Account</h2>
+        <hr>
+        <div class="row jumbotron">
+            <div class="col-sm-6">
+                <label for="fname">Employee Name</label>
+                <input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="fname"
+                    [(ngModel)]="employee.ename">
+            </div>
+
+            <div class="col-sm-6">
+                <label for="email">Email id</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter Email ID" name="email"
+                    [(ngModel)]="employee.email">
+            </div>
+            <div class="col-sm-6">
+                <label for="pass">Create Password</label>
+                <input type="password" class="form-control" id="pass" placeholder="Create Password" name="pass"
+                    [(ngModel)]="employee.password">
+            </div>
+       
+            <div class="col-sm-3">
+                <label for="flat">Contact No</label>
+                <input type="text" class="form-control" id="contact" placeholder="Contact No." name="contact"
+                    [(ngModel)]="employee.contactNo">
+            </div>
+            <div class="col-sm-12">
+                <label for="role">Role</label>
+                <select  name="role" id="emprole"  class="form-control" [(ngModel)]="employee.role">
+                    <option value="1">Admin</option>
+                    <option value="2">Manager</option>  
+                </select>
+            </div>
+
+
+
+            <div class="col-sm-12" style="text-align:center; margin-top: 20px;">
+                <button [disabled]="registrationForm.form.invalid" type="submit" class="btn btn-primary">Register Employee</button>
+            </div>
+        </div>
+        <div class="col">
+            <!-- Simple link -->
+            <a [routerLink]="['/loginform']">Existing user ? Login hear</a>
+        </div>
+    </form>
+
+</div>

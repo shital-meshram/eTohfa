@@ -1,0 +1,21 @@
+.inner{
+    overflow: hidden;
+
+}
+
+.card{
+    margin-top: 10%;
+}
+.inner img{
+    transition: all 1.5s ease;
+}
+
+.inner:hover img{
+    transform: scale(1.5);
+}
+
+.carousel-item {
+    margin-top: 2%;
+    height: 500px;
+  }
+

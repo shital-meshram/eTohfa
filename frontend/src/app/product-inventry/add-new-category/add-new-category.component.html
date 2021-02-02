@@ -1,0 +1,30 @@
+<p>add-new-category works!</p>
+<p style="text-align:center; margin-top: 20px; font-weight: bolder; font-size: x-large;">Add New Product</p>
+
+<div class="container">
+    <form #AddNewCategoryForm="ngForm" class="form-group" ngNativeValidate class="form-group" (ngSubmit)="addNewCategory()">
+
+    <div class="row jumbotron">
+        <div class="col-sm-12">
+            <label for="prodName">Category Name</label>
+            <input type="text" class="form-control" id="pname" name="CatName"
+                [(ngModel)]="category.catName">
+        </div>
+        <div class="col-sm-12">
+            <label for="discription">Brand</label>
+            <textarea cols="10" rows="5" class="form-control" id="brand" name="brand"
+                [(ngModel)]="category.brand"></textarea>
+        </div>
+    
+        <div class="col-sm-12" style="text-align:center; margin-top: 20px;">
+            <button [disabled]="AddNewCategoryForm.form.invalid" type="submit" class="btn btn-primary">Add Category</button>
+        </div>
+
+        <div class="col-sm-12" style="text-align:center; margin-top: 20px;">
+            <a [routerLink]="['/getAllProducts']">Go to product List</a>
+        </div>
+        
+    </div>
+    </form>
+</div>
+

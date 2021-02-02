@@ -1,0 +1,49 @@
+<p style="text-align:center; margin-top: 20px; font-weight: bolder; font-size: x-large;">Add New Product</p>
+
+<div class="container">
+    <form #AddNewProductForm="ngForm" class="form-group" ngNativeValidate class="form-group" (ngSubmit)="addNewProduct()">
+
+    <div class="row jumbotron">
+        <div class="col-sm-12">
+            <label for="prodName">Product Name</label>
+            <input type="text" class="form-control" id="pname" placeholder="Enter Product Name" name="prodName"
+                [(ngModel)]="product.prodName">
+        </div>
+        <div class="col-sm-12">
+            <label for="discription">Discription</label>
+            <textarea cols="10" rows="5" class="form-control" id="desc" placeholder="Enter Product Discription" name="discription"
+                [(ngModel)]="product.description"></textarea>
+        </div>
+    
+    
+        <div class="col-sm-12">
+            <label for="price">Price</label>
+            <input type="text" class="form-control" id="email" placeholder="Enter Product Price" name="price"
+                [(ngModel)]="product.price">
+        </div>
+    
+        <div class="col-sm-12">
+            <label for="quantity">Quantity</label>
+            <input type="text" class="form-control" id="email" placeholder="Enter Product Price" name="quantity"
+                [(ngModel)]="product.quantity">
+        </div>
+    
+        <div class="col-sm-12">
+            <label for="category">Category</label>
+            <select (change) = "onChange($event)"  name="category" id="prodCat" [(ngModel)]="category_id"  class="form-control" >
+                <option *ngFor="let category of categoryList" [value]="category.catId">{{category.catName}}</option>
+                
+            </select>
+        </div>
+        <div class="col-sm-12" style="text-align:center; margin-top: 20px;">
+            <button [disabled]="AddNewProductForm.form.invalid" type="submit" class="btn btn-primary">Add Product</button>
+        </div>
+
+        <div class="col-sm-12" style="text-align:center; margin-top: 20px;">
+            <a [routerLink]="['/getAllProducts']">Go to product List</a>
+        </div>
+        
+    </div>
+    </form>
+</div>
+

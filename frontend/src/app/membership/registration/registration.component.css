@@ -1,0 +1,10 @@
+.formdiv{
+    width: max-content;
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid whitesmoke;
+    box-shadow: 5px 5px 5px 5px rgb(247, 243, 243);
+    background-blend-mode: multiply;
+    margin: auto;
+    margin-top: 100px;
+}

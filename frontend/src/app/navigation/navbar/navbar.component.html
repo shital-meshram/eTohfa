@@ -1,0 +1,27 @@
+
+
+
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h3 class="my-0 mr-md-auto font-weight-bold"> eTohfa</h3>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="p-2 text-dark" href="#">Home</a>
+    <a class="p-2 text-dark" [routerLink]="['aboutus']">About Us</a>
+    <a class="p-2 text-dark" [routerLink]="['contactUs']">Contact</a>
+    <a class="p-2 text-dark" [routerLink]="['getAllCategories']">Products</a>
+    <a class="p-2 text-dark cart_item" [routerLink]="['shoppingCart']"><i class="fa fa-shopping-cart " style="color: blue;"></i></a>
+    <!-- <a class="p-2 text-dark" *ngIf="currentEmployee()!='admin'" [routerLink]="['getAllProducts']">Admin</a> -->
+    <p>{{greetings}}</p>
+    
+    
+  </nav>
+  
+  <!-- <a class="loginbtn btn btn-success" [routerLink]="['loginform']" ><i class="fas fa-sign-in-alt mr-2" ></i>{{ loginStatus == false ? 'Login' : 'Logout' }}</a> -->
+  <a class="loginbtn btn btn-success" [routerLink]="['loginform']" ><i class="fas fa-sign-in-alt mr-2" ></i>Login</a>
+  <a class="loginbtn btn btn-danger" (click)="logoutUser()" ><i class="fas fa-sign-out-alt"></i>LogOut</a>
+  
+ 
+</div>
+
+<div>
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let p of products">
+        <div class="card" style="width: 15rem; height: 450px; margin-bottom: 30px;">
+          <img src="../../../assets/card3.jpeg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title ">{{p.prodName}}</h5>
+            <p class="card-text">{{p.description}}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Product Id : {{p.prodId}}</li>
+            <li class="list-group-item">Price : {{p.price}}</li>
+          </ul>
+          <div class="card-body">
+            <button type="button" class="btn btn-success mr-2" [routerLink]="['/viewProduct',p.prodId]">View</button>
+            <button type="button" class="btn btn-primary" (click)="AddToCart(p.prodId)">Add To Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+  

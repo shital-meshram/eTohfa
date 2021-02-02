@@ -1,0 +1,40 @@
+<div class="container">
+  <h3 style="font-weight: bolder; text-align: center; margin-bottom: 30px;">Product List</h3>
+  <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th >Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+  
+      <tr *ngFor="let p of products">
+        <td>{{p.prodId}}</td>
+        <td>{{p.prodName}}</td>
+        <td>{{p.description}}</td>
+        <td>{{p.price}}</td>
+        <td>{{p.quantity}}</td>
+        <td>
+          <i class="fas fa-edit mr-4" [routerLink]="['/updateProduct',p.prodId]"></i>
+          <i class="fas fa-eye mr-4" [routerLink]="['/viewProduct',p.prodId]"></i>
+          <i class="fas fa-trash-alt mr-4" [routerLink]="['/deleteProduct',p.prodId]"></i>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+  <button type="button" style="text-align:center; margin-top: 20px; margin-right: 20px;" class="btn btn-dark text-white" [routerLink]="['/addNewProduct']">Add New Product</button>
+
+  <button type="button" style="text-align:center; margin-top: 20px; margin-right: 20px;" class="btn btn-dark text-white" [routerLink]="['/addNewCategory']">Add New Category</button>
+
+  <button type="button" style="text-align:center; margin-top: 20px;" class="btn btn-dark text-white" [routerLink]="['/getAllOrders']">Display All Orders</button>
+
+</div>
+
+
+

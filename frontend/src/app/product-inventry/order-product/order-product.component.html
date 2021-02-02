@@ -1,0 +1,67 @@
+
+
+<div class="container" style="padding: 20px;">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 style="font-weight: bolder; text-align: center; margin-bottom: 30px;">Invoice</h3>
+            <table class="table">
+                <tbody>
+                    <tr class="table-info">
+                        <td>Name : {{currentUser.customer.fname}} &nbsp; {{currentUser.customer.lname}}</td>   <!--Name-->
+                    </tr>
+                    <tr class="table-info">
+                        <td>Address : {{currentUser.customer.address.plotNo}}  <!--Address-->
+                        {{currentUser.customer.address.city}}
+                        {{currentUser.customer.address.state}}
+                        {{currentUser.customer.address.country}}
+                        {{currentUser.customer.address.postalCode}}</td>
+                    </tr>
+                    <tr class="table-info"><h5 style="font-weight:bold; text-align: center; margin-bottom: 30px; color: darkslateblue;">Ordered Products</h5></tr>
+                    <tr *ngFor="let product of cartArray | keyvalue" class="table-info"> <!--Product List-->
+                        
+                        <div *ngFor="let obj of product.value">
+                                <td>{{obj.prodId}}</td>
+                                <td>{{obj.prodName}}</td>
+                                <td>{{obj.price}}</td>
+                        </div>  
+                    </tr>
+                    <tr class="table-info">
+                        <td>Total Amount :  {{total}} <i class="fal fa-rupee-sign"></i></td>
+                    </tr>
+                    <tr class="table-info">
+                        <td style="font-weight: bolder; text-align: center; margin-bottom: 30px; color: crimson;">Thank You For Shopping with us..!!!</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!--  -->
+
+<!-- <div class="container" style="padding: 20px;">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <tbody>
+                    <tr class="table-info">
+                        <td>Name : {{currentUser.customer.fname}} &nbsp; {{currentUser.customer.lname}}</td>  
+                    </tr>
+                    <tr *ngFor="let product of cartArray | keyvalue" class="table-info"> 
+                        
+                        <div *ngFor="let obj of product.value">
+                                <td>{{obj.prodId}}</td>
+                                <td>{{obj.prodName}}</td>
+                                <td>{{obj.price}}</td>
+                        </div>  
+                    </tr>
+                    <tr class="table-info">
+                        <td>Total Amount :  {{total}} <i class="fal fa-rupee-sign"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> -->
+
+

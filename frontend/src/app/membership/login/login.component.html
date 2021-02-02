@@ -1,0 +1,63 @@
+<div class="container main" style="width: 100%; padding: 10px;">
+    <div class="container " style="width: 40%;padding: 10px;">
+        <div class="col-sm-12">
+            <form #loginform="ngForm" (ngSubmit)="loginUser()">
+                <h2 style="text-align:center; font-weight:bold;">Login User</h2>
+                <small class="text-danger" style="text-align: center;">{{msg}}</small>
+                <hr>
+
+                <div class="row jumbotron">
+                    <div class="col-sm-12">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" placeholder="Enter Username" name="email"
+                            [(ngModel)]="customer.email" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" required
+                            #email="ngModel" [class.is-invalid]="email.invalid && email.touched">
+                        <div *ngIf="email.errors && (email.invalid && email.touched)">
+                            <small class="text-danger" *ngIf="email.errors.required">Email Id is Required Field</small>
+                            <small class="text-danger" *ngIf="email.errors.pattern">Enter the Valid Email Id</small>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" placeholder="Enter Password" name="password"
+                            [(ngModel)]="customer.password" required #password="ngModel"
+                            [class.is-invalid]="password.invalid && password.touched">
+                        <div *ngIf="email.errors && (email.invalid && email.touched)">
+                            <small class="text-danger" *ngIf="email.errors.required">Password is Required Field</small>
+                        </div>
+
+                    </div>
+
+                    <div class="col-sm-12" style="text-align:center; margin-top: 20px; margin-bottom: 10px;">
+                        <button [disabled]="loginform.form.invalid" type="submit"
+                            class="btn btn-primary " >Login</button>
+                    </div>
+                    <br>
+                    <div class="form-check col-sm-6">
+                        <input class="form-check-input" type="checkbox" value="" id="form1Example3"
+                            style="margin-right: 5px;" />
+                        <label class="form-check-label" for="form1Example3"> Remember me </label>
+                    </div>
+                    <div class="col">
+                        <!-- Simple link -->
+                        <a href="#!">Forgot password?</a>
+                    </div>
+
+                    <div class="col">
+                        <!-- Simple link -->
+                        <a [routerLink]="['/UserRegistrationform']">New user ? Register hear</a>
+                    </div>
+
+                    <div class="col">
+                        <!-- Simple link -->
+                        <a [routerLink]="['/employeeLogin']">Employee Login </a>
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+
+</div>
